@@ -1,0 +1,1 @@
+<section class="empty-state card"><div class="empty-icon"><?= icon('shield') ?></div><h1>Permintaan tidak dapat diproses</h1><p>Silakan periksa pemberitahuan lalu kembali ke halaman yang tersedia.</p><a class="button" href="<?= e(url()) ?>">Kembali ke beranda <?= icon('arrow') ?></a></section>

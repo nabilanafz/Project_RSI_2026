@@ -1,0 +1,13 @@
+.env
+config/database.local.php
+storage/logs/*
+!storage/logs/.gitkeep
+storage/sessions/*
+!storage/sessions/.gitkeep
+storage/uploads/*
+!storage/uploads/.gitkeep
+!storage/uploads/demo_*.pdf
+public/__qa_*
+tests/result.json
+
+node_modules/

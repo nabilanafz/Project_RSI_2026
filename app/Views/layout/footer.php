@@ -1,0 +1,1 @@
+</main><?php if($currentUser):?><footer class="page-footer"><span>© <?= date('Y') ?> FILKOM UB · Magang &amp; Paruh Waktu Terpusat</span><span>Terhubung. Bertumbuh. Berkontribusi.</span></footer><?php endif;?><?php $errors=$modalErrors??[];require ROOT.'/app/Views/components/error-modal.php'; ?></body></html>

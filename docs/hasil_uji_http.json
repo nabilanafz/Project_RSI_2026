@@ -1,0 +1,591 @@
+{
+  "passed": 117,
+  "total": 117,
+  "results": [
+    {
+      "test": "Anonim diarahkan ke login",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Tidak ada registrasi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "POST tanpa CSRF ditolak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Injeksi login tidak masuk",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Login mahasiswa dari database",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Login rekruter dari database",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Login admin dari database",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Mahasiswa halaman dashboard",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Mahasiswa halaman lowongan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Mahasiswa halaman lamaran",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Mahasiswa halaman profil",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Mahasiswa halaman chat",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Mahasiswa halaman kalender",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Mahasiswa halaman notifikasi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Rekruter halaman dashboard",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Rekruter halaman lowongan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Rekruter halaman pendaftar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Rekruter halaman profil",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Rekruter halaman chat",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Rekruter halaman kalender",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Rekruter halaman notifikasi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Rekruter halaman rekapitulasi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Admin halaman dashboard",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Admin halaman perusahaan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Admin halaman profil",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Admin halaman notifikasi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Admin halaman rekapitulasi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Mahasiswa dilarang perusahaan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Mahasiswa dilarang pendaftar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Mahasiswa dilarang lowongan/form",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Mahasiswa dilarang rekapitulasi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Mahasiswa tidak melihat lamaran orang lain",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Rekruter tidak melihat kandidat perusahaan lain",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Dokumen mahasiswa lain ditolak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Dokumen kandidat perusahaan lain ditolak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Dokumen pribadi diunduh sebagai PDF",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Pencarian tanpa peka kapital",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Pencarian kosong menampilkan pesan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Kata kunci kosong menampilkan seluruh lowongan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Semua filter bekerja bersamaan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Draf perusahaan belum lolos tidak tampil",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Detail memuat persyaratan dan roadmap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Form pendaftaran sesuai lowongan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Berkas wajib divalidasi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Chat bukan milik mahasiswa ditolak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Chat sebelum lolos administrasi ditolak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Unggahan non-PDF ditolak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "PDF palsu ditolak dari MIME",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "PDF melebihi 5 MB ditolak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Unggah otomatis tanpa membuat lamaran",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Lamaran terhubung dan terkirim",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Lamaran memiliki identitas tersimpan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Pendaftaran ganda diblokir",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Pendaftar muncul pada rekruter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Rekruter membuka profil dan berkas",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Chat terkunci sebelum administrasi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Lolos administrasi memindahkan tahap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Chat terbuka setelah administrasi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Pesan mahasiswa tersimpan aman",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Pesan terlihat pada rekruter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Balasan rekruter tersimpan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Balasan terlihat pada mahasiswa",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Penilaian tahap kedaluwarsa ditolak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Jadwal masa lalu ditolak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Jadwal disimpan rekruter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Jadwal terhubung ke kalender mahasiswa",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Notifikasi pembaruan jadwal terkirim",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Tandai semua notifikasi dibaca",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Jumlah notifikasi belum dibaca menjadi nol",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Pengingat pribadi tersimpan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Pengingat jatuh tempo menjadi notifikasi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Pengingat pengguna lain tidak dapat diubah",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Pengingat dapat diubah",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Hapus pengingat memerlukan konfirmasi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Pengingat dihapus setelah konfirmasi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Lolos tes memindahkan ke wawancara",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Tahap terakhir menjadi Diterima",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Hasil akhir tersinkron mahasiswa",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Status final tidak ditimpa",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Form lowongan rekruter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Validasi kolom wajib lowongan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Aksi periksa manual tidak tersedia",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Pembatalan menampilkan konfirmasi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Kembali mengedit mempertahankan isian",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Konfirmasi pembatalan membuang formulir",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Buat lowongan dan roadmap terintegrasi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Lowongan baru langsung muncul pada mahasiswa",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Edit lowongan perusahaan lain ditolak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Edit mengisi field dari database",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Edit lowongan tersimpan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Tutup lowongan menampilkan konfirmasi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Tutup lowongan tersimpan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Lowongan tutup tidak dapat dilamar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Hapus lowongan hanya daftar aktif",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Perusahaan belum terverifikasi tidak dapat publikasi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Perusahaan belum terverifikasi tidak dapat membuat draf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Detail perusahaan admin",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Persetujuan tanpa pemeriksaan ditolak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Endpoint pemeriksaan terpisah ditolak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Endpoint kesimpulan terpisah ditolak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Pemeriksaan dan persetujuan disimpan bersama",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Keputusan admin diterima rekruter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Rekruter disetujui dapat mempublikasikan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Rekap admin memuat hasil terhubung",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Ekspor CSV benar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "CSV rekruter hanya perusahaannya",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Keputusan ulang pada perusahaan terverifikasi ditolak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Hapus perusahaan menampilkan konfirmasi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Penghapusan perusahaan terintegrasi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Sesi rekruter perusahaan dihapus dicabut",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Lowongan perusahaan dihapus tidak tampil",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Logout harus menggunakan POST",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Logout mengakhiri sesi",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Sesi lama tidak bisa membuka halaman privat",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Perubahan profil mahasiswa ditolak server",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Simpan profil dan legalitas memicu verifikasi ulang",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "Admin menerima notifikasi legalitas",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

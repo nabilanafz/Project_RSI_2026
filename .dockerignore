@@ -1,0 +1,15 @@
+.git
+.env
+config/database.local.php
+storage/logs/*
+storage/sessions/*
+tests/result.json
+public/__qa_*
+package.json
+package-lock.json
+storage/uploads/*
+!storage/uploads/.gitkeep
+!storage/uploads/demo_*.pdf
+
+node_modules
+tests/node_modules

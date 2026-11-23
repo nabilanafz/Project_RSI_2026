@@ -1,0 +1,54 @@
+services:
+  web:
+    build: .
+    ports:
+      - "127.0.0.1:8082:80"
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: rsi_filkom
+      DB_USER: rsi_user
+      DB_PASSWORD: ${FILKOM_DB_PASSWORD:-RsiLocal2026!}
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - uploads:/var/www/html/storage/uploads
+      - sessions:/var/www/html/storage/sessions
+      - logs:/var/www/html/storage/logs
+    restart: unless-stopped
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: rsi_filkom
+      MYSQL_USER: rsi_user
+      MYSQL_PASSWORD: ${FILKOM_DB_PASSWORD:-RsiLocal2026!}
+      MYSQL_ROOT_PASSWORD: ${FILKOM_ROOT_PASSWORD:-RsiRoot2026!}
+    ports:
+      - "127.0.0.1:3308:3306"
+    volumes:
+      - database:/var/lib/mysql
+      - ./database:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p\"$$MYSQL_ROOT_PASSWORD\" --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    restart: unless-stopped
+  phpmyadmin:
+    image: phpmyadmin:5-apache
+    ports:
+      - "127.0.0.1:8083:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      UPLOAD_LIMIT: 32M
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+volumes:
+  database:
+  uploads:
+  sessions:
+  logs:

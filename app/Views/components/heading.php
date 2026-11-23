@@ -1,0 +1,1 @@
+<div class="page-heading"><div><p class="eyebrow"><?= e($kicker??'FILKOM CONNECT') ?></p><h1><?= e($heading??$title) ?></h1><?php if(!empty($subtitle)):?><p><?= e($subtitle) ?></p><?php endif;?></div><?php if(!empty($headingAction)):?><?= $headingAction ?><?php endif;?></div>

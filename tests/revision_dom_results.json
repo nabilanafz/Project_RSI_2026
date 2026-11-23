@@ -1,0 +1,223 @@
+{
+  "environment": {
+    "dom": "jsdom 26.1.0 (no layout engine, native dialog behavior not verified)",
+    "php": "8.4.24",
+    "database": "MariaDB 11.8.6"
+  },
+  "passed": 53,
+  "total": 53,
+  "results": [
+    {
+      "test": "Login tiga role memakai sesi terpisah",
+      "passed": true
+    },
+    {
+      "test": "Profil mahasiswa hanya enam informasi statis",
+      "passed": true
+    },
+    {
+      "test": "POST manipulasi profil mahasiswa ditolak tanpa perubahan data",
+      "passed": true
+    },
+    {
+      "test": "Profil rekruter mempunyai satu form penyimpanan termasuk legalitas",
+      "passed": true
+    },
+    {
+      "test": "PDF legalitas palsu tidak menyimpan perubahan profil sebagian",
+      "passed": true
+    },
+    {
+      "test": "Satu submit menyimpan profil dan legalitas, status menjadi Menunggu",
+      "passed": true
+    },
+    {
+      "test": "Perusahaan menunggu tidak dapat mengakses form lowongan",
+      "passed": true
+    },
+    {
+      "test": "Permintaan draf/publikasi palsu perusahaan menunggu tidak menambah data",
+      "passed": true
+    },
+    {
+      "test": "Draf lama tidak ditampilkan atau dapat dibuka melalui URL langsung",
+      "passed": true
+    },
+    {
+      "test": "Rekruter terverifikasi juga tidak dapat menyimpan draf melalui POST",
+      "passed": true
+    },
+    {
+      "test": "Peninjauan admin satu card dengan dua aksi Tolak/Terima",
+      "passed": true
+    },
+    {
+      "test": "Persetujuan tidak lengkap kembali ke perusahaan sama, nilai form dipertahankan",
+      "passed": true
+    },
+    {
+      "test": "Error server dibuka sebagai dialog oleh JavaScript",
+      "passed": true
+    },
+    {
+      "test": "Penolakan tanpa alasan kembali dengan popup, status tetap Menunggu",
+      "passed": true
+    },
+    {
+      "test": "CSRF tidak valid tetap kembali ke konteks perusahaan",
+      "passed": true
+    },
+    {
+      "test": "Dokumen asing tidak dapat disisipkan dalam verifikasi",
+      "passed": true
+    },
+    {
+      "test": "Versi peninjauan kedaluwarsa tidak dapat menimpa perubahan perusahaan",
+      "passed": true
+    },
+    {
+      "test": "Kegagalan SQL membatalkan dokumen, keputusan, audit dan notifikasi bersama",
+      "passed": true
+    },
+    {
+      "test": "Terima menyimpan keputusan dan mengaktifkan akses pembuatan lowongan",
+      "passed": true
+    },
+    {
+      "test": "Keputusan ulang pada perusahaan terverifikasi ditolak",
+      "passed": true
+    },
+    {
+      "test": "Penolakan perusahaan menunggu mempertahankan pembatasan rekruter",
+      "passed": true
+    },
+    {
+      "test": "Form lowongan menggabungkan dua bagian dalam satu card utama",
+      "passed": true
+    },
+    {
+      "test": "Checklist lowongan diperbarui langsung ketika isian berubah",
+      "passed": true
+    },
+    {
+      "test": "Lowongan dan roadmap dipublikasikan dari form yang sama",
+      "passed": true
+    },
+    {
+      "test": "Publikasi terhubung ke pencarian mahasiswa",
+      "passed": true
+    },
+    {
+      "test": "Detail lowongan menggabungkan informasi dan roadmap",
+      "passed": true
+    },
+    {
+      "test": "Lamaran tanpa draf, tombol simpan/periksa, penggunaan CV profil dan upload portofolio",
+      "passed": true
+    },
+    {
+      "test": "Upload CV otomatis benar-benar dikirim ke server tanpa membuat lamaran",
+      "passed": true
+    },
+    {
+      "test": "URL portofolio memperbarui kelengkapan tanpa popup saat sedang mengetik",
+      "passed": true
+    },
+    {
+      "test": "Centang pernyataan mengaktifkan tombol, batal centang menonaktifkannya",
+      "passed": true
+    },
+    {
+      "test": "Backend tetap menolak kirim tanpa persetujuan meskipun dokumen lengkap",
+      "passed": true
+    },
+    {
+      "test": "Nilai persetujuan palsu selain 1 ditolak server",
+      "passed": true
+    },
+    {
+      "test": "Aksi draf dan penggunaan CV profil tidak dapat dipanggil kembali",
+      "passed": true
+    },
+    {
+      "test": "Upload portofolio ditolak dan URL berbahaya tidak dapat dikirim",
+      "passed": true
+    },
+    {
+      "test": "PDF palsu ditolak server, modal muncul dan unggahan valid sebelumnya bertahan",
+      "passed": true
+    },
+    {
+      "test": "File terlalu besar ditolak otomatis sebelum request atau simpan data",
+      "passed": true
+    },
+    {
+      "test": "Hapus unggahan memperbarui status langsung tanpa reload",
+      "passed": true
+    },
+    {
+      "test": "Tombol kirim disabled selama unggahan belum dikonfirmasi server",
+      "passed": true
+    },
+    {
+      "test": "Lamaran final menyimpan CV unggahan langsung dan URL portofolio",
+      "passed": true
+    },
+    {
+      "test": "Rekruter melihat kelengkapan otomatis dan form gabungan hasil/jadwal",
+      "passed": true
+    },
+    {
+      "test": "Pilihan Lolos membuka isian jadwal untuk tahap berikutnya",
+      "passed": true
+    },
+    {
+      "test": "Jadwal tidak valid membatalkan hasil sekaligus jadwal tanpa data sebagian",
+      "passed": true
+    },
+    {
+      "test": "Hasil dan jadwal valid tersimpan pada tahap aktif berikutnya",
+      "passed": true
+    },
+    {
+      "test": "Kalender dan notifikasi mahasiswa mengikuti jadwal",
+      "passed": true
+    },
+    {
+      "test": "Penilaian tahap lama ditolak tanpa menimpa progres",
+      "passed": true
+    },
+    {
+      "test": "Pembaruan jadwal saja tidak membuat hasil seleksi baru",
+      "passed": true
+    },
+    {
+      "test": "Pesan rekruter muncul otomatis dan tulisan mahasiswa tidak hilang",
+      "passed": true
+    },
+    {
+      "test": "Balasan mahasiswa muncul otomatis di sisi rekruter",
+      "passed": true
+    },
+    {
+      "test": "Koneksi chat gagal memunculkan modal dan pulih otomatis",
+      "passed": true
+    },
+    {
+      "test": "Tahap final menyembunyikan jadwal dan menghasilkan Diterima pada timeline",
+      "passed": true
+    },
+    {
+      "test": "Detail perusahaan disetujui lengkap, legalitas dan daftar lowongan tersedia",
+      "passed": true
+    },
+    {
+      "test": "Script berjalan tanpa exception pada seluruh DOM yang diuji",
+      "passed": true
+    },
+    {
+      "test": "Database mati: admin tetap melihat data perusahaan dan popup, aksi dinonaktifkan",
+      "passed": true
+    }
+  ]
+}
