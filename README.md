@@ -1,12 +1,6 @@
 # FILKOM Connect — Sistem Informasi Magang dan Paruh Waktu
 
-Implementasi **HTML + CSS, PHP native dengan struktur MVC, dan MySQL** berdasarkan laporan Kelompok 5 Modul 1–2 dan `Wireframe RSI.zip`. Tidak menggunakan framework, Composer, atau API eksternal/REST/JSON. Halaman dirender PHP; JavaScript native lokal menangani modal, pemeriksaan otomatis, tombol dinamis, dan pembaruan chat melalui respons HTML dari route PHP yang sama. phpMyAdmin digunakan untuk mengelola MySQL melalui browser; phpMyAdmin sendiri bukan mesin database.
-
-## Pembaruan 23 November 2026
-
-Paket ini merupakan revisi langsung kode sebelumnya, dengan struktur MVC, nama method utama, palet, tipografi, navigasi, dan komponen yang dipertahankan. Rincian: [Daftar revisi](docs/REVISI_2026-11-23.md) dan [hasil pengujian](docs/PENGUJIAN.md).
-
-**Sudah menjalankan Docker LAMP lama pada port 8000/8080/3307? Ikuti [UPDATE_DOCKER_LAMA.md](UPDATE_DOCKER_LAMA.md). Tidak perlu membuat stack baru, menghapus volume, atau mengimpor ulang database.** Langkah bagian 1 berikut hanya untuk instalasi baru dengan Compose bawaan paket.
+Implementasi **HTML + CSS, PHP native dengan struktur MVC, dan MySQL** berdasarkan laporan Kelompok 5 Modul 1–2 dan `Wireframe RSI.zip`. Tidak menggunakan framework, JavaScript, Composer, atau API eksternal. Semua interaksi menggunakan halaman/form HTTP yang dirender PHP. phpMyAdmin digunakan untuk mengelola MySQL melalui browser; phpMyAdmin sendiri bukan mesin database.
 
 ## 1. Menjalankan dengan Docker
 
@@ -78,12 +72,12 @@ Untuk memakai akun yang sudah dimiliki, baca **[docs/AKUN_DATABASE.md](docs/AKUN
 
 ## 4. Alur demo yang terintegrasi
 
-1. Masuk `mahasiswa` → **Lowongan** → **Data Analyst Intern** → **Daftar**. Unggah CV dan transkrip PDF langsung di formulir. Status diperbarui otomatis sesudah server memvalidasi berkas. Isi URL portofolio jika diwajibkan; centang persetujuan untuk mengaktifkan Kirim Lamaran.
+1. Masuk `mahasiswa` → **Lowongan** → **Data Analyst Intern** → **Daftar**. Unggah CV dan transkrip PDF, atau gunakan CV profil lalu unggah transkrip. Centang persetujuan dan kirim.
 2. Masuk `rekruter` pada browser/profil browser berbeda → **Pendaftar** → tinjau lamaran Nadia. Profil dan PDF yang dikirim mahasiswa tersedia di sini.
-3. Pada area **Hasil & Jadwal Seleksi**, pilih **Lolos** untuk tahap administrasi dan isi jadwal tahap berikutnya bila diperlukan. Satu tombol menyimpan hasil dan jadwal. Mahasiswa berpindah tahap, menerima notifikasi, dan memperoleh akses chat.
+3. Beri hasil **Lolos** untuk tahap administrasi. Mahasiswa otomatis berpindah tahap, menerima notifikasi, dan memperoleh akses chat dengan rekruter.
 4. Atur jadwal tes/wawancara. Jadwal muncul di detail lamaran dan kalender mahasiswa. Lanjutkan hasil tahap aktif hingga **Diterima**, atau pilih **Tidak Lolos** untuk menolak.
-5. Halaman **Lamaran** mahasiswa menampilkan timeline dan memperbarui halaman setiap 30 detik. **Notifikasi** juga diperbarui setiap 30 detik. Chat mengambil pembaruan HTML secara otomatis setiap 4 detik selama halaman aktif. Tidak ada tombol muat ulang, API JSON, atau WebSocket; teks pesan yang sedang ditulis tetap dipertahankan.
-6. Masuk `admin` → **Perusahaan** → **Ruang Karya Studio**. Buka PDF → isi pemeriksaan **Sesuai** untuk seluruh dokumen → **Terima**. Pemeriksaan, keputusan, audit, dan notifikasi disimpan bersama. **Tolak** membutuhkan alasan. Perusahaan terverifikasi hanya menyediakan tindakan **Hapus karena Pelanggaran**. `rekruter2` menerima notifikasi dan dapat mempublikasikan lowongan.
+5. Halaman **Lamaran** mahasiswa menampilkan timeline dan memperbarui halaman setiap 30 detik. **Notifikasi** juga diperbarui setiap 30 detik. Chat memakai tombol **Muat ulang pesan**; tidak memakai polling API/WebSocket.
+6. Masuk `admin` → **Perusahaan** → **Ruang Karya Studio**. Buka PDF → simpan pemeriksaan **Sesuai** → simpulkan **Layak** → **Setujui Perusahaan**. `rekruter2` menerima notifikasi dan dapat mempublikasikan lowongan.
 7. **Rekapitulasi** menampilkan hasil tersimpan per lowongan dan mahasiswa; ekspor CSV tersedia bagi admin dan rekruter sesuai kewenangannya.
 
 Pengingat pribadi muncul sebagai notifikasi ketika waktu yang dipilih telah tiba. Pemrosesan dilakukan pada setiap permintaan pengguna yang sudah login. Agar tetap diproses saat tidak ada pengunjung, jadwalkan perintah berikut setiap menit melalui cron/Windows Task Scheduler:
@@ -100,7 +94,6 @@ Docker: `docker compose exec -T web php bin/pengingat.php`. Notifikasi disimpan 
 | --- | --- |
 | `public/index.php` | Front controller, daftar rute, aturan metode HTTP, role, dan CSRF |
 | `public/assets/app.css` | Seluruh tampilan responsif, termasuk layar kecil dan gaya cetak |
-| `public/assets/app.js` | Modal, kelengkapan langsung, unggahan otomatis, jadwal gabungan, dan chat otomatis tanpa framework |
 | `app/Controllers` | Alur use case, validasi, otorisasi, transaksi, dan pengiriman data ke view |
 | `app/Models` | Entitas, pengambilan/penyimpanan data dan relasi MySQL |
 | `app/Views` | Template HTML dengan escaping PHP; tidak menjalankan kueri database |
@@ -121,11 +114,9 @@ Nama utama Modul 2 dipertahankan: `LowonganController`, `LamaranController`, `Lo
 
 - Semua 24 use case pada daftar Modul 2 tercakup; penomoran mengikuti daftar utama Modul 2, bukan rujukan silang yang tidak konsisten dalam beberapa paragraf skenario.
 - SIAM pada dokumen diganti autentikasi lokal sesuai permintaan terbaru: tidak ada integrasi API SIAM.
-- Struktur wireframe dipertahankan: header dan sidebar, daftar kartu lowongan, formulir di kiri/kelengkapan di kanan, serta timeline lamaran. Form lowongan memakai varian **satu halaman** dalam wireframe. Tombol tambah/hapus tahap tetap menggunakan form PHP. Kelengkapan diperbarui langsung menggunakan JavaScript native. Card data lowongan serta persyaratan/roadmap digabung sesuai revisi.
-- Dokumen PDF maksimal **5 MB per berkas**, mengikuti wireframe. Ada perbedaan dengan batas 10 MB di dokumen analisis; pilihan implementasi dicatat pada pemetaan. Berkas wajib mengikuti persyaratan lowongan. CV wajib diunggah langsung pada setiap formulir lamaran; portofolio hanya berupa URL http/https.
-- Tidak ada fitur draf mahasiswa/rekruter. ID unggahan yang sedang diproses ditahan sementara di sesi selama maksimal 2 jam tanpa membuat LAMARAN. Baris lamaran dibuat saat pengiriman final yang valid; satu mahasiswa hanya memiliki satu lamaran per lowongan. Berkas valid tetap tersedia ketika validasi formulir gagal.
-- Profil mahasiswa menampilkan enam data statis; backend menolak perubahan oleh mahasiswa. Profil dan legalitas rekruter memakai satu Simpan Perubahan.
-- Error aplikasi ditampilkan dalam modal dengan tombol X. Error verifikasi admin kembali ke perusahaan yang sama; pemeriksaan gagal tidak menyimpan perubahan sebagian.
+- Struktur wireframe dipertahankan: header dan sidebar, daftar kartu lowongan, formulir di kiri/kelengkapan di kanan, serta timeline lamaran. Form lowongan memakai varian **satu halaman** dalam wireframe. Tombol tambah/hapus tahap dan periksa kelengkapan melakukan submit halaman agar tetap HTML/CSS tanpa JavaScript.
+- Dokumen PDF maksimal **5 MB per berkas**, mengikuti wireframe. Ada perbedaan dengan batas 10 MB di dokumen analisis; pilihan implementasi dicatat pada pemetaan. Berkas wajib mengikuti persyaratan lowongan. Portofolio dapat berupa PDF atau URL http/https.
+- Draf lamaran tidak masuk daftar pendaftar rekruter. Satu mahasiswa hanya memiliki satu lamaran per lowongan, dijaga indeks unik database. Berkas valid tetap tersimpan saat validasi pengiriman gagal.
 - Tahap seleksi harus diproses berurutan. Tahap pertama adalah administrasi; kuota dicek ketika menerima kandidat di tahap terakhir. Roadmap dikunci setelah ada lamaran terkirim agar hasil yang sudah ada tetap konsisten.
 - Menghapus perusahaan menyembunyikan perusahaan/lowongan aktif dan menonaktifkan akun rekruter. Riwayat lamaran mahasiswa dan jejak keputusan tetap tersimpan. Menghapus lowongan juga menggunakan soft delete.
 - Password menggunakan hash; SQL memakai prepared statements; mutasi memakai POST + CSRF; tampilan meng-escape input; PDF disimpan di luar public dengan nama acak. Jangan menempatkan database/konfigurasi di dalam document root public.
@@ -140,7 +131,7 @@ python tests/integration.py http://127.0.0.1:8082/
 
 Tidak memerlukan pustaka Python tambahan. Parameter `--snapshots` hanya untuk pemeriksaan pengembang: menghasilkan HTML sementara `public/__qa_*.html`. Jangan gunakan opsi itu pada server yang berisi data nyata dan hapus berkas tersebut setelah pemeriksaan.
 
-Revisi ini lulus 117 pemeriksaan HTTP, 53 pemeriksaan DOM + HTTP/database, dan 47 kontrak method; 66 file PHP lulus lint. DOM memakai jsdom tanpa mesin layout, sehingga pemeriksaan visual dan perilaku dialog native di browser belum terverifikasi. Paket SQL diuji pada MariaDB 11.8 dengan PHP 8.4. Konfigurasi Docker menyediakan MySQL 8.0/PHP 8.3; build container Docker dan instalasi pada komputer Anda belum dieksekusi di lingkungan ini.
+Paket SQL diuji pada MariaDB 11.8 dengan PHP 8.4. Konfigurasi Docker menyediakan MySQL 8.0/PHP 8.3; build container Docker dan instalasi pada komputer Anda belum dieksekusi di lingkungan ini.
 
 ## 8. Pemecahan masalah
 
@@ -151,8 +142,8 @@ Revisi ini lulus 117 pemeriksaan HTTP, 53 pemeriksaan DOM + HTTP/database, dan 4
 | Login kembali ke form terus | Pastikan `storage/sessions` bisa ditulis; jangan menonaktifkan cookie browser |
 | Error 419 saat upload | Muat ulang form untuk CSRF baru; periksa `post_max_size` dan total ukuran unggahan |
 | PDF gagal diunggah | Gunakan PDF sungguhan ≤5 MB dan pastikan `storage/uploads` bisa ditulis |
-| Perusahaan tidak dapat publikasi | Periksa status verifikasi; admin memilih Sesuai pada dokumen lalu menekan Terima |
-| Lowongan tidak muncul | Periksa status Aktif, batas lamaran, status perusahaan dan filter; data draf lama/tutup/dihapus tidak ditampilkan |
+| Perusahaan tidak dapat publikasi | Periksa status verifikasi; admin perlu memeriksa dokumen, simpulkan Layak, lalu setujui |
+| Lowongan tidak muncul | Periksa status Aktif, batas lamaran, status perusahaan dan filter; draf/tutup/dihapus tidak ditampilkan |
 | Database Docker belum siap | `docker compose logs db` dan `docker compose ps`; tunggu healthcheck database |
 | Perubahan konfigurasi tidak berlaku | `database.local.php` mengalahkan environment; jangan menyalin file lokal XAMPP ke container |
 | Pesan “Permintaan belum selesai” | Baca `storage/logs/php.log`; detail kesalahan tidak ditampilkan kepada pengguna |
